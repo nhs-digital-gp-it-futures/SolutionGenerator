@@ -10,7 +10,7 @@ namespace CreateSolutions
     {   
         static void Main(string[] args)
         {
-            var connectionString = args[0] ?? DefaultValues.ConnectionString;
+            var connectionString = args.Length > 0 ? args[0] : DefaultValues.ConnectionString;
 
             var faker = new Faker();
 
