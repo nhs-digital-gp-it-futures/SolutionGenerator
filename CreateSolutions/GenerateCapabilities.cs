@@ -35,7 +35,7 @@ namespace CreateSolutions
             foreach (var solCap in solutionCapabilities)
             {
                 SqlExecutor.Execute<SolutionCapability>(connectionString, query,
-                    new {CapabilityId = solCap.CapabilityId, SolutionId = SolutionId});
+                    new {solCap.CapabilityId, SolutionId });
             }
         }
 
@@ -66,7 +66,7 @@ namespace CreateSolutions
             foreach (var epic in solEpics)
             {
                 SqlExecutor.Execute<SolutionCapability>(connectionString, query,
-                    new { CapabilityId = epic.CapabilityID, SolutionId = SolutionId, EpicId = epic.EpicID });
+                    new { CapabilityId = epic.CapabilityID, SolutionId, EpicId = epic.EpicID });
             }
         }
     }
